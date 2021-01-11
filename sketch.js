@@ -12,6 +12,7 @@ rriderimg = loadImage("red.png");
 griderimg = loadImage("green.png");
 briderimg = loadImage("blue.png");
 yriderimg = loadImage("yellow.png");
+smileimg = loadImage("smile.webp");
 }
 function setup() {
   createCanvas(700,500);
@@ -23,6 +24,14 @@ function setup() {
   dice1.addImage(diceimg);
   dice1.scale = 0.5
   
+  corner1 = createSprite(193,220,25,26);
+  corner1.addImage(smileimg);
+  corner1.scale = 0.02
+  corner2 = createSprite(222,190,25,25);
+  corner3 = createSprite(276,192,25,25);
+  corner4 = createSprite(310,220,25,25);
+
+  house = createSprite(250,250,85,85);
   rrider1 = createSprite(93,83,10,10);
   rrider1.addImage(rriderimg);
   rrider1.scale = 0.3
@@ -89,11 +98,11 @@ function draw() {
     switch(rand){
       case 1: dice1.addImage(diceoneimg);
               dice1.scale = 0.4;
-              level = 1
+              level = 1;
       break;
       case 2: dice1.addImage(dicetwoimg);
               dice1.scale = 0.3 
-              level = 2
+              level = 2;
       break;
       case 3: dice1.addImage(dicethreeimg);
               dice1.scale = 0.2
@@ -118,109 +127,141 @@ function draw() {
   if(level === 6 && mousePressedOver(rrider1 )){
       rrider1.x = 79;
       rrider1.y = 215;
-}
+} 
  if(level === 6 && mousePressedOver(rrider2)){
       rrider2.x = 79;
       rrider2.y = 215;
 }
-/*else if(level === 6 && mousePressedOver(rrider3)){
+if(level === 6 && mousePressedOver(rrider3)){
       rrider3.x = 79;
       rrider3.y = 215;
 }
-else if(level === 6 && mousePressedOver(rrider4)){
+if(level === 6 && mousePressedOver(rrider4)){
       rrider4.x = 79;
       rrider4.y = 215;
-}*/
-/*if(dicesiximg && mousePressedOver(rrider2 )){
-    rrider2.x = 79;
-    rrider2.y = 215;
-}
-if(dicesiximg && mousePressedOver(rrider3 )){
-    rrider3.x = 79;
-    rrider3.y = 215;
-}
-if(dicesiximg && mousePressedOver(rrider4 )){
-    rrider4.x = 79;
-    rrider4.y = 215;
 }
 
-if(dicesiximg && mousePressedOver(grider1 )){
-        grider1.x = 280;
-        grider1.y = 71;
-}
-if(dicesiximg && mousePressedOver(grider2 )){
-      grider2.x = 280
+/*if(level === 6 && mousePressedOver(grider1 )){
+      grider1.x = 280;
+      grider1.y = 71;
+} 
+ if(level === 6 && mousePressedOver(grider2)){
+      grider2.x = 280;
       grider2.y = 71;
 }
-if(dicesiximg && mousePressedOver(grider3 )){
+if(level === 6 && mousePressedOver(grider3)){
       grider3.x = 280;
       grider3.y = 71;
 }
-if(dicesiximg && mousePressedOver(grider4 )){
+if(level === 6 && mousePressedOver(grider4)){
       grider4.x = 280;
       grider4.y = 71;
 }
 
-
-if(dicesiximg && mousePressedOver(brider1 )){
-        brider1.x = 222;
-        brider1.y = 410;
-}
-if(dicesiximg && mousePressedOver(brider2 )){
+if(level === 6 && mousePressedOver(brider1 )){
+      brider1.x = 222;
+      brider1.y = 410;
+} 
+ if(level === 6 && mousePressedOver(brider2)){
       brider2.x = 222;
       brider2.y = 410;
 }
-if(dicesiximg && mousePressedOver(brider3 )){
+if(level === 6 && mousePressedOver(brider3)){
       brider3.x = 222;
       brider3.y = 410;
 }
-if(dicesiximg && mousePressedOver(brider4 )){
+if(level === 6 && mousePressedOver(brider4)){
       brider4.x = 222;
       brider4.y = 410;
 }
 
 
-if( (dicesiximg) && mousePressedOver(yrider1 )){
+if( level === 6 && mousePressedOver(yrider1 )){
       yrider1.x = 422;
       yrider1.y = 272;
 }
-if(dicesiximg && mousePressedOver(yrider2 )){
+if(level === 6 && mousePressedOver(yrider2 )){
       yrider2.x = 422;
       yrider2.y = 272;
 }
-if(dicesiximg && mousePressedOver(yrider3 )){
+if(level === 6 && mousePressedOver(yrider3 )){
       yrider3.x = 422;
       yrider3.y = 272;
 }
-if(dicesiximg && mousePressedOver(yrider4 )){
+if(level === 6 && mousePressedOver(yrider4 )){
       yrider4.x = 422;
       yrider4.y = 272;
 }*/
-if(mousePressedOver(rrider1)){
-      rrider1.x  = mouseX
-      rrider1.y = mouseY 
+
+
+if(level === 1 && mousePressedOver(rrider1)){
+      rrider1.x = rrider1.x+30;
 }
-/*if(mousePressedOver(rrider1) && keyIsDown(UP_ARROW)){
-      rrider1.y -=2
+if(level === 1 && mousePressedOver(rrider2)){
+      rrider2.x = rrider2.x+30;
 }
-if(mousePressedOver(rrider1) && keyIsDown(DOWN_ARROW)){
-      rrider1.y +=2
+if(level === 1 && mousePressedOver(rrider3)){
+      rrider3.x = rrider3.x+30;
 }
-if(mousePressedOver(rrider1) && keyIsDown(LEFT_ARROW)){
-      rrider1.x -=2
+if(level === 1 && mousePressedOver(rrider4)){
+      rrider4.x = rrider4.x+30;
+}
+
+if(level === 2 && mousePressedOver(rrider1)){
+      rrider1.x = rrider1.x+55 ;
+}
+if(level === 2 && mousePressedOver(rrider2)){
+      rrider2.x = rrider2.x+55 ;
+}
+if(level === 2 && mousePressedOver(rrider3)){
+      rrider3.x = rrider3.x+55 ;
+}
+if(level === 2 && mousePressedOver(rrider4)){
+      rrider4.x = rrider4.x+55 ;
+}
+
+if(level === 3 && mousePressedOver(rrider1)){
+      rrider1.x = rrider1.x+86;
+}
+if(level === 3 && mousePressedOver(rrider2)){
+      rrider2.x = rrider2.x+86;
+}
+if(level === 3 && mousePressedOver(rrider3)){
+      rrider3.x = rrider3.x+86;
+}
+if(level === 3 && mousePressedOver(rrider4)){
+      rrider4.x = rrider4.x+86;
+}
+
+if(level === 4 && mousePressedOver(rrider1)){
+      rrider1.x = rrider1.x+112;
+}
+if(level === 4 && mousePressedOver(rrider2)){
+      rrider2.x = rrider2.x+112;
+}
+if(level === 4 && mousePressedOver(rrider3)){
+      rrider3.x = rrider3.x+112;
+}
+if(level === 4 && mousePressedOver(rrider4)){
+      rrider4.x = rrider4.x+112;
+}
+//if(rrider1.x === 191 && rrider1.y === 215){
+      
+//}
+/*if( mousePressedOver(rrider1)&& rrider1.x === 191 ){
+      rrider1.x = 220;
+      rrider1.y = 185;
 }*/
-if( mousePressedOver(rrider2)){
-      rrider2.x = mouseX
-      rrider2 = mouseY 
+if(mousePressedOver(rrider1) && rrider1.isTouching(corner1)){
+      rrider1.x = 222;
+      rrider1.y = 190;
+
+      if(level === 1 && mousePressedOver(rrider1)){
+            rrider1.y = rrider1.y+30;
+      }
 }
-/*if(mousePressedOver(rrider2) && keyIsDown(UP_ARROW)){
-      rrider2.y -=2
-}
-if(mousePressedOver(rrider2) && keyIsDown(DOWN_ARROW)){
-      rrider2.y +=2
-}
-if(mousePressedOver(rrider2) && keyIsDown(LEFT_ARROW)){
-      rrider2.x -=2
-}*/
-  drawSprites();
+drawSprites();
+fill("red");
+textSize(20);
+text(mouseX + "," +mouseY,mouseX,mouseY);
 }
