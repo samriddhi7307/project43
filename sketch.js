@@ -24,12 +24,12 @@ function setup() {
   dice1.addImage(diceimg);
   dice1.scale = 0.5
   
-  corner1 = createSprite(193,220,25,26);
+ /* corner1 = createSprite(193,220,25,26);
   corner1.addImage(smileimg);
-  corner1.scale = 0.02
-  corner2 = createSprite(222,190,25,25);
+  corner1.scale = 0.017
+  corner2 = createSprite(222,50,25,25);
   corner3 = createSprite(276,192,25,25);
-  corner4 = createSprite(310,220,25,25);
+  corner4 = createSprite(310,220,25,25);*/
 
   house = createSprite(250,250,85,85);
   rrider1 = createSprite(93,83,10,10);
@@ -197,7 +197,24 @@ if(level === 6 && mousePressedOver(yrider4 )){
 if(level === 1 && mousePressedOver(rrider1)){
       rrider1.x = rrider1.x+30;
 }
-if(level === 1 && mousePressedOver(rrider2)){
+if(level === 2 && mousePressedOver(rrider1)){
+      rrider1.x = rrider1.x+55 ;
+}
+if(level === 3 && mousePressedOver(rrider1)){
+      rrider1.x = rrider1.x+86;
+}
+if(level === 4 && mousePressedOver(rrider1)){
+      rrider1.x = rrider1.x+112;
+}
+/*if(level ===1 && mousePressedOver(rrider1)){
+      rrider1.y -=30; 
+      rrider1.x = 222;
+}*/
+/*if(level ===2 && mousePressedOver(rrider1)){
+      rrider1.y -= 55;
+      rrider1.x = 222;
+}*/
+/*if(level === 1 && mousePressedOver(rrider2)){
       rrider2.x = rrider2.x+30;
 }
 if(level === 1 && mousePressedOver(rrider3)){
@@ -207,9 +224,6 @@ if(level === 1 && mousePressedOver(rrider4)){
       rrider4.x = rrider4.x+30;
 }
 
-if(level === 2 && mousePressedOver(rrider1)){
-      rrider1.x = rrider1.x+55 ;
-}
 if(level === 2 && mousePressedOver(rrider2)){
       rrider2.x = rrider2.x+55 ;
 }
@@ -220,9 +234,6 @@ if(level === 2 && mousePressedOver(rrider4)){
       rrider4.x = rrider4.x+55 ;
 }
 
-if(level === 3 && mousePressedOver(rrider1)){
-      rrider1.x = rrider1.x+86;
-}
 if(level === 3 && mousePressedOver(rrider2)){
       rrider2.x = rrider2.x+86;
 }
@@ -233,9 +244,6 @@ if(level === 3 && mousePressedOver(rrider4)){
       rrider4.x = rrider4.x+86;
 }
 
-if(level === 4 && mousePressedOver(rrider1)){
-      rrider1.x = rrider1.x+112;
-}
 if(level === 4 && mousePressedOver(rrider2)){
       rrider2.x = rrider2.x+112;
 }
@@ -244,21 +252,22 @@ if(level === 4 && mousePressedOver(rrider3)){
 }
 if(level === 4 && mousePressedOver(rrider4)){
       rrider4.x = rrider4.x+112;
-}
-//if(rrider1.x === 191 && rrider1.y === 215){
-      
-//}
-/*if( mousePressedOver(rrider1)&& rrider1.x === 191 ){
-      rrider1.x = 220;
-      rrider1.y = 185;
 }*/
-if(mousePressedOver(rrider1) && rrider1.isTouching(corner1)){
+if(mousePressedOver(rrider1) && rrider1.x>193 && level ===1 ){
+      rrider1.y -=30;
       rrider1.x = 222;
-      rrider1.y = 190;
-
-      if(level === 1 && mousePressedOver(rrider1)){
-            rrider1.y = rrider1.y+30;
-      }
+}
+if(mousePressedOver(rrider1) && rrider1.x>193 && level ===2 ){
+      rrider1.y -=55;
+      rrider1.x = 222;
+}
+if(mousePressedOver(rrider1) && rrider1.x>193 && level ===3 ){
+      rrider1.y -=86;
+      rrider1.x = 222;
+}
+if(mousePressedOver(rrider1) && rrider1.y>50 && level ===1){
+      rrider1.x +=30;
+      rrider1.y = 50;
 }
 drawSprites();
 fill("red");
