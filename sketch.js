@@ -265,9 +265,22 @@ if(mousePressedOver(rrider1) && rrider1.x>193 && level ===3 ){
       rrider1.y -=86;
       rrider1.x = 222;
 }
-if(mousePressedOver(rrider1) && rrider1.y>50 && level ===1){
+if(mousePressedOver(rrider1) && rrider1.x>193 && level ===4 ){
+      rrider1.y -=112;
+      rrider1.x = 222;
+}
+
+if(mousePressedOver(rrider1) && rrider1.y<35 && level ===1){
       rrider1.x +=30;
-      rrider1.y = 50;
+      rrider1.y = 45;
+}
+if(mousePressedOver(rrider1) && rrider1.y<35 && level ===2){
+      rrider1.x +=55;
+      rrider1.y = 45;
+}
+if(mousePressedOver(rrider1) && rrider1.x>253 && level ===1){
+      rrider1.x = 253;
+      rrider1.y +=30   
 }
 drawSprites();
 fill("red");
